@@ -18,6 +18,7 @@
             android:weightSum="3"
             android:background="@drawable/gradient2">
             <ImageView
+                android:id="@+id/img_buttons"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
@@ -25,17 +26,31 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
                 />
-            <EditText
-                android:background="#FFFFFF"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:layout_height="match_parent"
+                android:orientation="horizontal"
                 android:layout_margin="5dp"
-                android:hint="Search"
-                android:gravity="center_vertical"
-                android:paddingLeft="10dp"
-                android:drawableRight="@drawable/ic_search"
-                android:paddingRight="10dp"/>
+                android:background="#FFFFFF"
+                android:weightSum="5"
+                >
+                <EditText
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="Search"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_search"
+                    android:id="@+id/img_btn_search"
+                    android:padding="15dp"/>
+            </LinearLayout>
         </LinearLayout>
         <FrameLayout
             android:layout_width="match_parent"
