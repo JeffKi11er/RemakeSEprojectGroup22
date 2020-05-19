@@ -14,4 +14,7 @@
     <color name="dashdemo">#367</color>
     <color name="green">#342</color>
     <color name="loglag">#988</color>
+    <color name="whitecolor">#FFFFFF</color>
+    <color name="textcolor">#03A9F4</color>
+
 </resources>

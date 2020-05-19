@@ -6,4 +6,7 @@
     <string name="favorite">Favorite</string>
     <string name="partners">Partners</string>
     <string name="tours">Tours</string>
+    <string name="text">Text</string>
+    <string name="mydashboard">My DashBoard</string>
+    <string name="dashboarditems">12 items</string>
 </resources>
