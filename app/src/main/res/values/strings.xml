@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">UIBeautifulCollection2</string>
     <string name="next_button">Next</string>
+    <string name="search">Search destination</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="partners">Partners</string>
+    <string name="tours">Tours</string>
 </resources>

@@ -9,4 +9,9 @@
     <color name="accent">#FF4081</color>
     <color name="darkblue">#3023AE</color>
     <color name="purple">#c86dd7</color>
+    <color name="backgroundnav">#26FFFFFF</color>
+    <color name="menu">#C3BBBB</color>
+    <color name="dashdemo">#367</color>
+    <color name="green">#342</color>
+    <color name="loglag">#988</color>
 </resources>
