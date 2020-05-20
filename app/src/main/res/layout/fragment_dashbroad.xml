@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/androidaback">
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,36 +13,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center"
-            android:weightSum="3"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:weightSum="3">
             <LinearLayout
-                android:paddingLeft="20dp"
                 android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mydashboard"
-                    android:textColor="@color/whitecolor"
-                    android:textSize="30dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:textColor="@color/textcolor"
-                    android:text="@string/dashboarditems"/>
-            </LinearLayout>
-            <LinearLayout
                 android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                >
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="95dp"
-                    android:layout_marginLeft="25dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_height="95dp"
                     android:src="@drawable/ic_face"
@@ -51,11 +31,34 @@
                     android:id="@+id/header_face"
                     />
             </LinearLayout>
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/tv_namedas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mydashboard"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <TextView
+                    android:id="@+id/tv_emaildas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/menu"
+                    android:text="@string/dashboarditems"/>
+            </LinearLayout>
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/rcl_dashboard"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="30dp"/>
     </LinearLayout>
 </ScrollView>

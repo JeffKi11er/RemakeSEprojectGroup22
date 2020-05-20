@@ -36,14 +36,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void init() {
         firebaseAuth = FirebaseAuth.getInstance();
-        imgButtonBar = (ImageView)findViewById(R.id.img_buttons);
+        //imgButtonBar = (ImageView)findViewById(R.id.img_buttons);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
         imgButtonSearch = (ImageView)findViewById(R.id.img_btn_search);
         bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(botListener);
         //imgButtonBar.setOnClickListener(this);
         imgButtonSearch.setOnClickListener(this);
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,new FragmentTours()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,new FragmentHome()).commit();
     }
 
     @Override
@@ -82,9 +82,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.img_btn_search:
                 break;
-            case R.id.img_buttons:
-                drawerLayout.openDrawer(navView);
-                break;
+//            case R.id.img_buttons:
+//                drawerLayout.openDrawer(navView);
+//                break;
         }
     }
 }

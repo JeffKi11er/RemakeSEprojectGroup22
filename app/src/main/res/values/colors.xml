@@ -16,5 +16,5 @@
     <color name="loglag">#988</color>
     <color name="whitecolor">#FFFFFF</color>
     <color name="textcolor">#03A9F4</color>
-
+    <color name="invisible">#00BCBDBC</color>
 </resources>

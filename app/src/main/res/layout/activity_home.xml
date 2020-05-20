@@ -52,29 +52,23 @@
 <!--                    android:padding="15dp"/>-->
 <!--            </LinearLayout>-->
 <!--        </LinearLayout>-->
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/frame_container" />
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_margin="25dp"
-            app:cardCornerRadius="10dp"
-            android:id="@+id/card"
-            >
             <RelativeLayout
-                android:background="@color/backgroundnav"
+                android:id="@+id/rv"
+                android:background="@drawable/background_white"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:layout_alignParentLeft="true"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_menu"
-                    android:scaleType="fitXY"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/img_buttons"/>
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_height="?attr/actionBarSize">
+<!--                <ImageView-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:src="@drawable/ic_menu"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:id="@+id/img_buttons"/>-->
                 <EditText
                     android:id="@+id/edt_search"
                     android:textSize="20sp"
@@ -92,7 +86,11 @@
                     android:id="@+id/img_btn_search"/>
 
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+        <FrameLayout
+            android:layout_below="@id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame_container" />
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
