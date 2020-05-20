@@ -45,6 +45,7 @@ public class FragmentHome extends Fragment {
         dashboardItems.add(new DashboardItem(R.drawable.emergency,"Khẩn Cấp"));
         dashboardItems.add(new DashboardItem(R.drawable.ticket,"Đặt Vé"));
         dashboardItems.add(new DashboardItem(R.drawable.your_events,"Sự Kiện"));
+        dashboardItems.add(new DashboardItem(R.drawable.logout,"Đăng xuất"));
         recyclerView = (RecyclerView)v.findViewById(R.id.rcl_dashboard);
         adapter = new DashboardAdapter(this.getContext(),dashboardItems);
         recyclerView.setAdapter(adapter);
