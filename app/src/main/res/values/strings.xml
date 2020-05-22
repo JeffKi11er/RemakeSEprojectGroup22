@@ -9,4 +9,7 @@
     <string name="text">Text</string>
     <string name="mydashboard">My DashBoard</string>
     <string name="dashboarditems">12 items</string>
+    <string name="adventure">ADVENTURE</string>
+    <string name="leisure">LEISURE</string>
+    <string name="foodsafari">FOOD SAFARI</string>
 </resources>

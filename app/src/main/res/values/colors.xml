@@ -17,4 +17,8 @@
     <color name="whitecolor">#FFFFFF</color>
     <color name="textcolor">#03A9F4</color>
     <color name="invisible">#00BCBDBC</color>
+    <color name="add1">#0288d1</color>
+    <color name="add2">#01579b</color>
+    <color name="add3">#4527a0</color>
+    <color name="addtour">#f50057</color>
 </resources>
