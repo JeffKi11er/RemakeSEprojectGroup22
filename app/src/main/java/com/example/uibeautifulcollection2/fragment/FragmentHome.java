@@ -38,13 +38,11 @@ public class FragmentHome extends Fragment {
         tvName = (TextView)v.findViewById(R.id.tv_namedas) ;
         tvEmail = (TextView)v.findViewById(R.id.tv_emaildas);
         imgFace = (ImageView) v.findViewById(R.id.header_face);
-        dashboardItems.add(new DashboardItem(R.drawable.calendar,"Lịch"));
+        dashboardItems.add(new DashboardItem(R.drawable.calendar,"Tạo Lịch"));
         dashboardItems.add(new DashboardItem(R.drawable.bug,"Báo lỗi"));
         dashboardItems.add(new DashboardItem(R.drawable.chat,"Trò Chuyện"));
-        dashboardItems.add(new DashboardItem(R.drawable.status,"Tâm Trạng"));
         dashboardItems.add(new DashboardItem(R.drawable.emergency,"Khẩn Cấp"));
         dashboardItems.add(new DashboardItem(R.drawable.ticket,"Đặt Vé"));
-        dashboardItems.add(new DashboardItem(R.drawable.your_events,"Sự Kiện"));
         dashboardItems.add(new DashboardItem(R.drawable.logout,"Đăng xuất"));
         recyclerView = (RecyclerView)v.findViewById(R.id.rcl_dashboard);
         adapter = new DashboardAdapter(this.getContext(),dashboardItems);

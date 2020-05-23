@@ -1,22 +1,26 @@
 package com.example.uibeautifulcollection2.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.uibeautifulcollection2.MainActivity;
 import com.example.uibeautifulcollection2.R;
 import com.example.uibeautifulcollection2.item.DashboardItem;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
-public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.DashHolder> {
+public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.DashHolder>{
     private Context context;
     private List<DashboardItem>dashboardItems;
 
@@ -33,9 +37,20 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DashHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final DashHolder holder, int position) {
         holder.tvDash.setText(dashboardItems.get(position).getTextD());
         holder.imgDash.setImageResource(dashboardItems.get(position).getImageD());
+        holder.imgDash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,"Text click"+holder.getAdapterPosition(),Toast.LENGTH_LONG).show();
+                if(holder.getAdapterPosition()==5){
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(context, MainActivity.class);
+                    context.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override
