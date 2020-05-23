@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.uibeautifulcollection2.AddNewActivity;
 import com.example.uibeautifulcollection2.MainActivity;
 import com.example.uibeautifulcollection2.R;
 import com.example.uibeautifulcollection2.item.DashboardItem;
@@ -48,6 +49,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
                     FirebaseAuth.getInstance().signOut();
                     Intent intent = new Intent(context, MainActivity.class);
                     context.startActivity(intent);
+                }
+                if (holder.getAdapterPosition()==0){
+                    context.startActivity(new Intent(context, AddNewActivity.class));
                 }
             }
         });
