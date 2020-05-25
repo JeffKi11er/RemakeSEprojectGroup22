@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.uibeautifulcollection2.R;
 import com.example.uibeautifulcollection2.item.ItemTours;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class AlsoTourAdapter extends RecyclerView.Adapter<AlsoTourAdapter.TourHo
     @Override
     public void onBindViewHolder(@NonNull TourHorHolder holder, int position) {
         holder.tvHolTour.setText(itemTours.get(position).getTextT());
-        holder.imgHol.setImageResource(itemTours.get(position).getImageT());
+        Picasso.get().load(itemTours.get(position).getImageT()).into(holder.imgHol);
     }
 
     @Override

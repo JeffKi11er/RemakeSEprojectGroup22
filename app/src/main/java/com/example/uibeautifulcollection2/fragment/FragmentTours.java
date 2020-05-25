@@ -15,6 +15,8 @@ import com.example.uibeautifulcollection2.R;
 import com.example.uibeautifulcollection2.adapter.AlsoTourAdapter;
 import com.example.uibeautifulcollection2.adapter.ToursAdapter;
 import com.example.uibeautifulcollection2.item.ItemTours;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -26,18 +28,20 @@ public class FragmentTours extends Fragment {
     private ToursAdapter adapterT;
     private AlsoTourAdapter adapterH1;
     private AlsoTourAdapter adapterH2;
+    private DatabaseReference mData;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_tours,container,false);
-        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
-        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
-        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
-        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
-        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
-        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
-        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
-        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+//        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+//        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+//        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+//        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+//        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+//        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+//        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+//        tours.add(new ItemTours(R.drawable.haiphong,"Hai Phong"));
+        mData = FirebaseDatabase.getInstance().getReference();
         rclTours = (RecyclerView)v.findViewById(R.id.rcl_tours);
         rclHol1 = (RecyclerView)v.findViewById(R.id.rcl_ho1);
         rclHol2 = (RecyclerView)v.findViewById(R.id.rcl_ho2);

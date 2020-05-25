@@ -1,7 +1,7 @@
 package com.example.uibeautifulcollection2.item;
 
 public class ItemTours {
-    private int imageT;
+    private String imageT;
     private String textT;
     private String detailInfo;
     private String country;
@@ -9,12 +9,12 @@ public class ItemTours {
     private String dateEnd;
     private long participants;
 
-    public ItemTours(int imageT, String textT) {
+    public ItemTours(String imageT, String textT) {
         this.imageT = imageT;
         this.textT = textT;
     }
 
-    public ItemTours(int imageT, String textT, String detailInfo, String country, String dateStart, String dateEnd, long participants) {
+    public ItemTours(String imageT, String textT, String detailInfo, String country, String dateStart, String dateEnd, long participants) {
         this.imageT = imageT;
         this.textT = textT;
         this.detailInfo = detailInfo;
@@ -24,11 +24,11 @@ public class ItemTours {
         this.participants = participants;
     }
 
-    public int getImageT() {
+    public String getImageT() {
         return imageT;
     }
 
-    public void setImageT(int imageT) {
+    public void setImageT(String imageT) {
         this.imageT = imageT;
     }
 
