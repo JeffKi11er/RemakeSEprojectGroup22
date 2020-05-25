@@ -2,6 +2,7 @@ package com.example.uibeautifulcollection2.fragment;
 
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,8 +38,14 @@ public class FragmentAddNew extends Fragment implements View.OnClickListener {
         tvBtnSeemore = (TextView)v.findViewById(R.id.btn_seemore);
         tvSave = (TextView)v.findViewById(R.id.tv_btnsave);
         tvCancel = (TextView)v.findViewById(R.id.tv_btncancel);
+        imgFlag.setOnClickListener(this);
+        imgBtnCal1.setOnClickListener(this);
+        imgBtnCal2.setOnClickListener(this);
+        tvSave.setOnClickListener(this);
+        tvCancel.setOnClickListener(this);
         return v;
     }
+
 
     @Override
     public void onClick(View v) {
@@ -56,6 +63,10 @@ public class FragmentAddNew extends Fragment implements View.OnClickListener {
             case R.id.btn_seemore:
                 break;
             case R.id.tv_btnsave:
+                if(getArguments().getString("urlImage")!=null) {
+                    String urlImage = getArguments().getString("urlImage");
+                    Log.d("AAAA", "onComplete: Url: "+ urlImage);
+                }
                 break;
             case R.id.tv_btncancel:
                 break;

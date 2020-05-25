@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,9 +25,18 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
 //    private TextView tvAd;
 //    private TextView tvLei;
 //    private TextView tvFood;
+    private ImageView imgFlag;
+    private TextView tvBtnSeemore;
+    private TextView tvSave;
+    private TextView tvCancel;
+    private ImageView imgBtnCal1;
+    private ImageView imgBtnCal2;
+    private EditText edtName;
+    private EditText edtDescrition;
     private TextView tvGoBack;
     private ImageView imgGoBack;
     private Uri uriLandscape;
+    private ImageView imgAddPic;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,16 +46,32 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
 
     private void init() {
         imgAddBtn = findViewById(R.id.img_btnaddimg);
+        imgFlag = findViewById(R.id.img_flag);
+        tvBtnSeemore = findViewById(R.id.tv_seemore);
+        tvSave = findViewById(R.id.tv_btnsaving);
+        tvCancel = findViewById(R.id.tv_newbtncancel);
+        imgBtnCal1 = findViewById(R.id.btn_cal1);
+        imgBtnCal2 = findViewById(R.id.btn_cal2);
+        edtName = findViewById(R.id.edt_saynametrip);
+        edtDescrition = findViewById(R.id.edt_describle);
 //        tvAd = findViewById(R.id.tv_btnad);
 //        tvLei = findViewById(R.id.tv_btnlei);
 //        tvFood = findViewById(R.id.tv_btnfood);
         imgGoBack = findViewById(R.id.img_comeback);
+//        imgAddPic = findViewById(R.id.img_addimage);
         imgAddBtn.setOnClickListener(this);
+        imgFlag.setOnClickListener(this);
+        tvBtnSeemore.setOnClickListener(this);
+        tvSave.setOnClickListener(this);
+        tvCancel.setOnClickListener(this);
+        imgBtnCal1.setOnClickListener(this);
+        imgBtnCal2.setOnClickListener(this);
 //        tvAd.setOnClickListener(this);
 //        tvLei.setOnClickListener(this);
 //        tvFood.setOnClickListener(this);
         imgGoBack.setOnClickListener(this);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container_addtour,new FragmentAddNew()).commit();
+//        imgAddPic.setOnClickListener(this);
+        //getSupportFragmentManager().beginTransaction().replace(R.id.container_addtour,new FragmentAddNew()).commit();
     }
     @Override
     public void onClick(View v) {
@@ -63,7 +89,14 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.img_btnaddimg:
                 chooseLanscape();
                 break;
+//            case R.id.img_addimage:
+//                saveToFragment();
+//                break;
         }
+    }
+
+    private void saveToFragment() {
+        imgAddPic.setImageResource(R.drawable.ic_addedlistr);
     }
 
     private void chooseLanscape() {
@@ -81,6 +114,10 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
             try{
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),uriLandscape);
                 imgAddBtn.setImageBitmap(bitmap);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("urlImage", uriLandscape.toString());
+//                FragmentAddNew fragmentAddNew = new FragmentAddNew();
+//                fragmentAddNew.setArguments(bundle);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
