@@ -122,6 +122,8 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.tv_btnsaving:
                 uploadToDatabaseTours();
+                startActivity(new Intent(this,HomeActivity.class));
+                finish();
                 break;
 //            case R.id.img_addimage:
 //                saveToFragment();
@@ -183,9 +185,9 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
                         Uri downloadUri = task.getResult();
                         Log.d("AAAA","onComplete: Url: "+downloadUri.toString());
                         lanscapeUrl = downloadUri.toString();
-                        //ItemTours itemTours = new ItemTours(String.valueOf(downloadUri),edtName.getText().toString(),edtDescrition.getText().toString(),"Vietnam","Sep 3,2016","Nov 17,2016",2300);
-                        ItemTours itemTours = new ItemTours(String.valueOf(downloadUri),edtName.getText().toString());
-                        databaseReferenceTours.child("checkTours").push().setValue(itemTours,new DatabaseReference.CompletionListener(){//child("toursPath").push().setValue(itemTours, new DatabaseReference.CompletionListener() {
+                        ItemTours itemTours = new ItemTours(String.valueOf(downloadUri),edtName.getText().toString(),edtDescrition.getText().toString(),"Vietnam","Sep 3,2016","Nov 17,2016",2300);
+                        //ItemTours itemTours = new ItemTours(String.valueOf(downloadUri),edtName.getText().toString());
+                        databaseReferenceTours.child("toursPath").push().setValue(itemTours, new DatabaseReference.CompletionListener() {//child("checkTours").push().setValue(itemTours,new DatabaseReference.CompletionListener(){
                             @Override
                             public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
                                 progressBarAdd.setVisibility(View.GONE);

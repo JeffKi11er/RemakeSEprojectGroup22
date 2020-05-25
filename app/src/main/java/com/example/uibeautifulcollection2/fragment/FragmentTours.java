@@ -67,7 +67,7 @@ public class FragmentTours extends Fragment {
     }
 
     private void loadData() {
-        mData.child("checkTours").addChildEventListener(new ChildEventListener() {//toursPath
+        mData.child("toursPath").addChildEventListener(new ChildEventListener() {//checkTours
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 ItemTours tour = (ItemTours)dataSnapshot.getValue(ItemTours.class);
