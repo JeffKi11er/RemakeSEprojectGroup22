@@ -24,6 +24,7 @@ import com.example.uibeautifulcollection2.fragment.FragmentAddNew;
 import com.example.uibeautifulcollection2.item.ItemTours;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.FadingCircle;
+import com.github.ybq.android.spinkit.style.FoldingCube;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -87,7 +88,7 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
         imgGoBack = findViewById(R.id.img_comeback);
 //        imgAddPic = findViewById(R.id.img_addimage);
         progressBarAdd = (ProgressBar)findViewById(R.id.progress_add);
-        Sprite fading = new FadingCircle();
+        Sprite fading = new FoldingCube();
         progressBarAdd.setIndeterminateDrawable(fading);
         firebaseAuth = FirebaseAuth.getInstance();
         imgAddBtn.setOnClickListener(this);
@@ -182,8 +183,9 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
                         Uri downloadUri = task.getResult();
                         Log.d("AAAA","onComplete: Url: "+downloadUri.toString());
                         lanscapeUrl = downloadUri.toString();
-                        ItemTours itemTours = new ItemTours(String.valueOf(downloadUri),edtName.getText().toString(),edtDescrition.getText().toString(),"Vietnam","Sep 3,2016","Nov 17,2016",2300);
-                        databaseReferenceTours.child("toursPath").push().setValue(itemTours, new DatabaseReference.CompletionListener() {
+                        //ItemTours itemTours = new ItemTours(String.valueOf(downloadUri),edtName.getText().toString(),edtDescrition.getText().toString(),"Vietnam","Sep 3,2016","Nov 17,2016",2300);
+                        ItemTours itemTours = new ItemTours(String.valueOf(downloadUri),edtName.getText().toString());
+                        databaseReferenceTours.child("checkTours").push().setValue(itemTours,new DatabaseReference.CompletionListener(){//child("toursPath").push().setValue(itemTours, new DatabaseReference.CompletionListener() {
                             @Override
                             public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
                                 progressBarAdd.setVisibility(View.GONE);
