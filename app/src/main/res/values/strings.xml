@@ -12,4 +12,20 @@
     <string name="adventure">ADVENTURE</string>
     <string name="leisure">LEISURE</string>
     <string name="foodsafari">FOOD SAFARI</string>
+    <string name="where">Where is your next big adventure ?</string>
+    <string name="hi">Hi, Jacob</string>
+    <string name="country">Country/City</string>
+    <string name="whatname">What is the name of your trip ?</string>
+    <string name="tintname">Mexico w/TripHappy</string>
+    <string name="date">Do you know the dates for your trip ?</string>
+    <string name="describe">Describe your trip: </string>
+    <string name="tinddescribe">Joining up with the TripHappy dev team!</string>
+    <string name="limitcharacter">150 character max</string>
+    <string name="publish">Publish to Community</string>
+    <string name="date1">Sep 3,2016</string>
+    <string name="date2">Nov 17,2016</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="plan">Travel plan</string>
+    <string name="tokyo">Tokyo (Japan)</string>
 </resources>

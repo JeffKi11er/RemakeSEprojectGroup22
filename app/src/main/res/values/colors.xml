@@ -21,4 +21,7 @@
     <color name="add2">#01579b</color>
     <color name="add3">#4527a0</color>
     <color name="addtour">#f50057</color>
+    <color name="btnsave">#2e7d32</color>
+    <color name="btncancel">#9e9d24</color>
+    <color name="addtourcolor">#20D8C7</color>
 </resources>

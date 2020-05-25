@@ -13,16 +13,19 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.uibeautifulcollection2.fragment.FragmentAddNew;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class AddNewActivity extends AppCompatActivity implements View.OnClickListener {
     private static int CHOOSE_IMAGE = 102;
     private ImageView imgAddBtn;
-    private TextView tvAd;
-    private TextView tvLei;
-    private TextView tvFood;
+//    private TextView tvAd;
+//    private TextView tvLei;
+//    private TextView tvFood;
     private TextView tvGoBack;
+    private ImageView imgGoBack;
     private Uri uriLandscape;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,26 +36,27 @@ public class AddNewActivity extends AppCompatActivity implements View.OnClickLis
 
     private void init() {
         imgAddBtn = findViewById(R.id.img_btnaddimg);
-        tvAd = findViewById(R.id.tv_btnad);
-        tvLei = findViewById(R.id.tv_btnlei);
-        tvFood = findViewById(R.id.tv_btnfood);
-        tvGoBack = findViewById(R.id.tv_back);
+//        tvAd = findViewById(R.id.tv_btnad);
+//        tvLei = findViewById(R.id.tv_btnlei);
+//        tvFood = findViewById(R.id.tv_btnfood);
+        imgGoBack = findViewById(R.id.img_comeback);
         imgAddBtn.setOnClickListener(this);
-        tvAd.setOnClickListener(this);
-        tvLei.setOnClickListener(this);
-        tvFood.setOnClickListener(this);
-        tvGoBack.setOnClickListener(this);
+//        tvAd.setOnClickListener(this);
+//        tvLei.setOnClickListener(this);
+//        tvFood.setOnClickListener(this);
+        imgGoBack.setOnClickListener(this);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_addtour,new FragmentAddNew()).commit();
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.tv_btnad:
-                break;
-            case R.id.tv_btnlei:
-                break;
-            case R.id.tv_btnfood:
-                break;
-            case R.id.tv_back:
+//            case R.id.tv_btnad:
+//                break;
+//            case R.id.tv_btnlei:
+//                break;
+//            case R.id.tv_btnfood:
+//                break;
+            case R.id.img_comeback:
                 finish();
                 startActivity(new Intent(this,HomeActivity.class));
                 break;
