@@ -19,12 +19,15 @@ import java.util.List;
 public class AlsoTourAdapter extends RecyclerView.Adapter<AlsoTourAdapter.TourHorHolder> {
     private Context context;
     private List<ItemTours>itemTours;
+    private ItemTourListener listener;
 
     public AlsoTourAdapter(Context context, List<ItemTours> itemTours) {
         this.context = context;
         this.itemTours = itemTours;
     }
-
+    public void setListener(ItemTourListener listener){
+        this.listener = listener;
+    }
     @NonNull
     @Override
     public TourHorHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,9 +36,17 @@ public class AlsoTourAdapter extends RecyclerView.Adapter<AlsoTourAdapter.TourHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TourHorHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TourHorHolder holder, final int position) {
         holder.tvHolTour.setText(itemTours.get(position).getTextT());
         Picasso.get().load(itemTours.get(position).getImageT()).into(holder.imgHol);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(listener!=null){
+                    listener.onClickItem(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -51,5 +62,8 @@ public class AlsoTourAdapter extends RecyclerView.Adapter<AlsoTourAdapter.TourHo
             tvHolTour = (TextView)itemView.findViewById(R.id.tv_nametourhor);
             imgHol = (ImageView)itemView.findViewById(R.id.img_watch);
         }
+    }
+    public interface ItemTourListener{
+        void onClickItem(int position);
     }
 }

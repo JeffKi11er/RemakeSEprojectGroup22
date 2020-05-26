@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class FragmentTours extends Fragment {
+public class FragmentTours extends Fragment implements ToursAdapter.ItemListener,AlsoTourAdapter.ItemTourListener{
     private RecyclerView rclTours;
     private RecyclerView rclHol1;
     private RecyclerView rclHol2;
@@ -56,6 +57,9 @@ public class FragmentTours extends Fragment {
         rclHol1.setAdapter(adapterH1);
         rclHol2.setAdapter(adapterH2);
         loadData();
+        adapterT.setListener(this);
+        adapterH1.setListener(this);
+        adapterH2.setListener(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);
         rclTours.setLayoutManager(linearLayoutManager);
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);
@@ -73,8 +77,8 @@ public class FragmentTours extends Fragment {
                 ItemTours tour = (ItemTours)dataSnapshot.getValue(ItemTours.class);
                 tours.add(new ItemTours(tour.getImageT(),tour.getTextT()));
                 adapterT.notifyDataSetChanged();
-//                adapterH1.notifyDataSetChanged();
-//                adapterH2.notifyDataSetChanged();
+                adapterH1.notifyDataSetChanged();
+                adapterH2.notifyDataSetChanged();
  //               tours.add(new ItemTours(tour.getImageT(),tour.getTextT(),tour.getDetailInfo(),tour.getCountry(),tour.getDateStart(),tour.getDateEnd(),tour.getParticipants()));
             }
 
@@ -98,6 +102,16 @@ public class FragmentTours extends Fragment {
 
             }
         });
+    }
+
+    @Override
+    public void onClick(int position) {
+        Toast.makeText(this.getContext(),tours.get(position).getTextT(),Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onClickItem(int position) {
+        Toast.makeText(this.getContext(),tours.get(position).getTextT(),Toast.LENGTH_LONG).show();
     }
 
     @Override

@@ -20,10 +20,15 @@ import java.util.List;
 public class ToursAdapter extends RecyclerView.Adapter<ToursAdapter.TourHolder> {
     private Context context;
     private List<ItemTours>tours;
+    private ItemListener listener;
 
     public ToursAdapter(Context context, List<ItemTours> tours) {
         this.context = context;
         this.tours = tours;
+    }
+
+    public void setListener(ItemListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -34,9 +39,17 @@ public class ToursAdapter extends RecyclerView.Adapter<ToursAdapter.TourHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TourHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TourHolder holder, final int position) {
         holder.tvTours.setText(tours.get(position).getTextT());
         Picasso.get().load(tours.get(position).getImageT()).into(holder.imgTours);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(listener!=null){
+                    listener.onClick(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -52,5 +65,8 @@ public class ToursAdapter extends RecyclerView.Adapter<ToursAdapter.TourHolder> 
             tvTours = (TextView)itemView.findViewById(R.id.tv_nametour);
             imgTours = (ImageView)itemView.findViewById(R.id.img_show);
         }
+    }
+    public interface ItemListener{
+        void onClick(int position);
     }
 }
