@@ -1,6 +1,8 @@
 package com.example.uibeautifulcollection2.item;
 
-public class ItemTours {
+import java.io.Serializable;
+
+public class ItemTours implements Serializable {
     private String imageT;
     private String textT;
     private String detailInfo;
@@ -12,10 +14,10 @@ public class ItemTours {
     public ItemTours() {
     }
 
-    public ItemTours(String imageT, String textT) {
-        this.imageT = imageT;
-        this.textT = textT;
-    }
+//    public ItemTours(String imageT, String textT) {
+//        this.imageT = imageT;
+//        this.textT = textT;
+//    }
 
     public ItemTours(String imageT, String textT, String detailInfo, String country, String dateStart, String dateEnd, long participants) {
         this.imageT = imageT;

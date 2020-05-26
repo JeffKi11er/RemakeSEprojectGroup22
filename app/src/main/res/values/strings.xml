@@ -46,4 +46,5 @@
     <string name="gotomap">Go to google map !</string>
     <string name="or">OR</string>
     <string name="turnback">Turning back !</string>
+    <string name="likeit">Do you like it ?</string>
 </resources>

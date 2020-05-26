@@ -1,5 +1,6 @@
 package com.example.uibeautifulcollection2.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.uibeautifulcollection2.ItemInfoActivity;
 import com.example.uibeautifulcollection2.R;
 import com.example.uibeautifulcollection2.adapter.AlsoTourAdapter;
 import com.example.uibeautifulcollection2.adapter.ToursAdapter;
@@ -75,7 +77,7 @@ public class FragmentTours extends Fragment implements ToursAdapter.ItemListener
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 ItemTours tour = (ItemTours)dataSnapshot.getValue(ItemTours.class);
-                tours.add(new ItemTours(tour.getImageT(),tour.getTextT()));
+                tours.add(new ItemTours(tour.getImageT(),tour.getTextT(),tour.getDetailInfo(),tour.getCountry(),tour.getDateStart(),tour.getDateEnd(),tour.getParticipants()));
                 adapterT.notifyDataSetChanged();
                 adapterH1.notifyDataSetChanged();
                 adapterH2.notifyDataSetChanged();
@@ -106,12 +108,43 @@ public class FragmentTours extends Fragment implements ToursAdapter.ItemListener
 
     @Override
     public void onClick(int position) {
-        Toast.makeText(this.getContext(),tours.get(position).getTextT(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getContext(),tours.get(position).getTextT(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getContext(),tours.get(position).getCountry(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getContext(),tours.get(position).getDetailInfo(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getContext(),tours.get(position).getCountry(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getContext(),tours.get(position).getDateStart(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getContext(),tours.get(position).getDateEnd(),Toast.LENGTH_LONG).show();
+        String img = tours.get(position).getImageT();
+        String nm = tours.get(position).getTextT();
+        String info = tours.get(position).getDetailInfo();
+        String nation = tours.get(position).getCountry();
+        String dateS = tours.get(position).getDateStart();
+        String dateE = tours.get(position).getDateEnd();
+        long no = tours.get(position).getParticipants();
+        ItemTours item = new ItemTours(img,nm,info,nation,dateS,dateE,no);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Item",item);
+        Intent intent = new Intent(this.getContext(), ItemInfoActivity.class);
+        intent.putExtra("data",bundle);
+        startActivity(intent);
     }
 
     @Override
     public void onClickItem(int position) {
-        Toast.makeText(this.getContext(),tours.get(position).getTextT(),Toast.LENGTH_LONG).show();
+//        Toast.makeText(this.getContext(),tours.get(position).getTextT(),Toast.LENGTH_LONG).show();
+        String img = tours.get(position).getImageT();
+        String nm = tours.get(position).getTextT();
+        String info = tours.get(position).getDetailInfo();
+        String nation = tours.get(position).getCountry();
+        String dateS = tours.get(position).getDateStart();
+        String dateE = tours.get(position).getDateEnd();
+        long no = tours.get(position).getParticipants();
+        ItemTours item = new ItemTours(img,nm,info,nation,dateS,dateE,no);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Item",item);
+        Intent intent = new Intent(this.getContext(), ItemInfoActivity.class);
+        intent.putExtra("data",bundle);
+        startActivity(intent);
     }
 
     @Override
