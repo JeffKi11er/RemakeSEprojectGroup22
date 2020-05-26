@@ -24,10 +24,10 @@
                     android:scaleType="fitXY"
                     android:id="@+id/img_btnaddimg"/>
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_comeback"
-                    android:layout_alignParentRight="true"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_arrowback"
+                    android:layout_margin="10dp"
                     android:id="@+id/img_comeback"/>
                 <!--            <ImageView-->
                 <!--                android:layout_marginRight="2dp"-->

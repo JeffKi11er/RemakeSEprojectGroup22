@@ -29,4 +29,21 @@
     <string name="plan">Travel plan</string>
     <string name="tokyo">Tokyo (Japan)</string>
     <string name="seemore">See more</string>
+    <string name="haiphong">Hai Phong</string>
+    <string name="onefrom7">(One From 7 Wonders of World)</string>
+    <string name="address">Hai Phong city, Vietnam</string>
+    <string name="extra">-</string>
+    <string name="photography">Photography</string>
+    <string name="picnic">Picnic</string>
+    <string name="sightseeing">Sightseeing</string>
+    <string name="about">About</string>
+    <string name="introducehaiphong">Haiphong is a coastal city located at the mouth of the Cấm River (Cấm River), in Vietnam</string>
+    <string name="likes">Like</string>
+    <string name="reviews">2030 viewers</string>
+    <string name="map_api_key">AIzaSyAAe3BmnLc55uKywvOa3CvKFNQ0oWnxYYk</string>
+    <string name="link">DirectLink.iso</string>
+    <string name="confirm">You need to move to direct website</string>
+    <string name="gotomap">Go to google map !</string>
+    <string name="or">OR</string>
+    <string name="turnback">Turning back !</string>
 </resources>

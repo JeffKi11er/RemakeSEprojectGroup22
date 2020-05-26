@@ -24,4 +24,5 @@
     <color name="btnsave">#2e7d32</color>
     <color name="btncancel">#9e9d24</color>
     <color name="addtourcolor">#20D8C7</color>
+    <color name="like">#ff5252</color>
 </resources>
