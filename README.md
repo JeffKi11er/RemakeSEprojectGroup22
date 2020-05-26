@@ -64,6 +64,8 @@ You can run your tests in Android Studio or from the command line.
 
 Please go to the [link](https://github.com/JeffKi11er/SEProjectGROUP22) for details on our code of conduct, and the process for submitting pull requests to us.
 
+## Old version [link](https://github.com/JeffKi11er/SEProjectGROUP22)
+
 ## Authors
 
 * **Nguyen An Thiet** - *USTHBI8 -174* - [JeffKi11er](https://github.com/JeffKi11er) -<Back-end/Tester>
